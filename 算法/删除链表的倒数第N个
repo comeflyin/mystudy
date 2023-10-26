@@ -1,0 +1,14 @@
+var removeNthFromEnd = function(head, n) {  
+    let map = new Map()
+    let ans = new ListNode(0,head)
+    let temp = ans
+    let length = 0
+
+    while(temp !== null){
+        map.set(length ++,temp)
+        temp = temp.next
+    }
+    map.set(length,null) //尾节点
+    map.get(length - n - 1).next = map.get(length - n + 1)
+    return ans.next
+};
