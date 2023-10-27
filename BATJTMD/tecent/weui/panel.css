@@ -1,0 +1,20 @@
+.weui-panel{
+  background-color: var(--weui-BG-2);
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/*第一段 没必要mt */
+/* 其余的会和前面的panel mt */
+.weui-panel:first-child{  /* 没有空格就是本身，有空格就是子元素 */
+  margin-top: 0;
+}
+
+.weui-panel__hd{
+  padding: 16px 16px 16px;
+  color: var(--weui-FG-0);
+  font-style: 15px;
+  font-weight: 500;
+  position: relative;
+}
