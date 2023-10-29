@@ -1,12 +1,30 @@
+
 .weui-panel{
   background-color: var(--weui-BG-2);
   margin-top: 10px;
   position: relative;
   overflow: hidden;
 }
+div{
+  display: block;
+}
 
-/*第一段 没必要mt */
-/* 其余的会和前面的panel mt */
+a{
+  text-decoration: none; /* 去掉下划线 */
+}
+
+a:-webkit-any-link{
+  /* color: -webkit-link; */
+  cursor: pointer; /* 鼠标移上去变成手指 */
+  /* text-decoration: underline; */
+}
+
+a img {
+  border: 0; /* 去掉图片边框 */
+}
+
+/*第一段 没必要m-t */
+/* 其余的会和前面的panel m-t */
 .weui-panel:first-child{  /* 没有空格就是本身，有空格就是子元素 */
   margin-top: 0;
 }
@@ -17,4 +35,115 @@
   font-style: 15px;
   font-weight: 500;
   position: relative;
+}
+
+.weui-panel__hd:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--weui-BG-3);
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+a.weui-media-box{
+  color: #000;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* 去掉点击高亮 */
+  padding: 16px;
+  position: relative;
+}
+
+.weui-media-box_appmsg .weui-media-box__hd {
+  margin-right: 16px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+img {
+  overflow-clip-margin: content-box;/* 为了防止图片溢出 */
+  overflow: clip;/* 为了防止图片溢出 */
+}
+
+.weui-media-box_appmsg {
+  display: -webkit-box;/* 为了实现多行省略号 */
+  display: -webkit-flex; /* 定义标准属性“flex”以实现兼容性*/
+  display: flex; /* 伸缩 */
+  -webkit-box-align: center; 
+  -webkit-align-items: center; /* 定义标准属性“align-items”以实现兼容性*/
+  align-items: center; 
+}
+.weui-media-box_appmsg .weui-media-box__thumb {
+    width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+.weui-media-box_appmsg.weui-media-box__bd {
+  -webkit-box-flex: 1; /* 伸缩 */
+  -webkit-flex: 1; /* 定义标准属性“flex”以实现兼容性*/
+  flex: 1; /* 伸缩 */
+  min-width: 0; /* 为了防止文字溢出 */
+}
+
+.weui-media-box__title {
+    display: block;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.4;
+    color: rgba(0,0,0,0.9);
+    color: var(--weui-FG-0);
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 超出显示省略号 */
+    white-space: nowrap; /* 不换行 */
+    word-wrap: normal; 
+    word-wrap: break-word; /* 单词内换行 */
+    -webkit-hyphens: auto; 
+    hyphens: auto; /* 定义标准属性“hyphens”以实现兼容性 */
+}
+
+.weui-media-box__desc {
+  color: rgba(0,0,0,0.3);
+  color: var(--weui-FG-2);
+  font-size: 14px;
+  line-height: 1.4;
+  padding-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; /* 为了实现多行省略号 */
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2;  /* 为了实现多行省略号 */  
+  word-wrap: break-word; 
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.weui-cell_link {
+  color: #576b95;
+  color: var(--weui-LINK);
+}
+
+.weui-cell_access {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  color: inherit;
+}
+
+.weui-cell {
+  padding: 16px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: 1.41176471;
+  font-size: 17px;
+  color: rgba(0,0,0,0.9);
+  color: var(--weui-FG-0);
 }

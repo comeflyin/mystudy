@@ -23,9 +23,18 @@ body{
     统一更改 方便管理复用
     皮肤更换的时候
   */
-  --weui-BG-0: #111;
-  --weui-BG-2: #191919;
-  --weui-FG-1: rgba(255,255,255,0.5);
+  --weui-BG-0: #ededed;
+  --weui-BG-1: #f7f7f7;
+  --weui-BG-2: #fff;
+  --weui-BG-3: #f7f7f7;
+  --weui-BG-4: #4c4c4c;
+  --weui-BG-5: #fff;
+  --weui-FG-0: rgba(0, 0, 0, 0.9);
+  --weui-FG-1: rgba(0, 0, 0, 0.55);
+  --weui-FG-2: rgba(0, 0, 0, 0.3);
+  --weui-FG-3: rgba(0, 0, 0, 0.1);
+  --weui-FG-4: rgba(0, 0, 0, 0.15);
+  --weui-FG-5: rgba(0, 0, 0, 0.05);
   
 }
 
@@ -33,9 +42,7 @@ body{
   /* weui技术很激进 css4 变量 */
   background-color: var(--weui-BG-0);
 }
-body{
-  color: rgba(255,255,255,0.8);
-}
+
 .page__hd{
   padding: 40px;
 }
