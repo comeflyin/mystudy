@@ -23,3 +23,16 @@
   3. 在父容器伪元素after上做 清楚浮动
   4. 在下方被影响的容器上做 清除浮动
   5. BFC 
+
+  # BFC 容器 Block Formatting Context 块级格式化上下文
+  - 哪些属性可以创建BFC：
+  1. float: left||right
+  2. position: absolute || fixed
+  3. display: inline-block
+  4. display: table-cell .... <!--表格布局 -->
+  5. overflow: hidden || auto || overly || scroll
+  6. 弹性盒子 (display: flex || inline-flex)
+
+  - BFC的特点：
+  1. BFC容器在计算高度时，会将浮动元素的高度也计算在内
+  2. 解决内外margin重叠问题
