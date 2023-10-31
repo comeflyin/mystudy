@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      width: 300px;
+      border: 1px solid #000;
+    }
+    .float-left {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: #668ced;
+    }
+    .text {
+      /* 创建BFC，防止文字环绕 */
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="float-left"></div>
+    <p class="text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </p> 
+   </div> 
+</body>
+</html>

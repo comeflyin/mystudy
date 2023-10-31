@@ -9,6 +9,9 @@
     margin: 0;
     padding: 0;
   }
+  /* ul{
+    float: left;
+  } */
   ul li{
     list-style: none;
     width: 200px;
@@ -31,12 +34,12 @@
     /* clear: both; */
   }
 
-  ul{
-    overflow: auto; /*超出自适应 清除浮动*/
-  }
-  /* .clear{
-    clear: left;
+  /* ul{
+    overflow: auto; 超出自适应 清除浮动
   } */
+   .clear{
+    clear: left;
+  } 
 
   /* ul::after{
     content: '';
@@ -52,7 +55,7 @@
       <li>1</li>
       <li>2</li>
       <li>3</li>
-      <!-- <div class="clear"></div> -->
+      <div class="clear"></div>
     </ul>
 
     <div class="test">hello world</div>
