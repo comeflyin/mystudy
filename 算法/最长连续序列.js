@@ -12,3 +12,22 @@ var longestConsecutive = function(nums) {
   }
   return max
 }
+
+
+// set 直接建立哈希，节省掉排序时间
+var longestConsecutive = function(nums) {
+  let set = new Set(nums)
+  let max = 0
+  for(const num of set){
+      if(!set.has(num - 1)){
+          let temp = num
+          let sum = 1
+          while(set.has(temp + 1)){
+              temp ++
+              sum ++
+          }
+          max = Math.max(max,sum)
+      }
+  }
+  return max
+};
