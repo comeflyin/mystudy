@@ -11,4 +11,4 @@ var longestConsecutive = function(nums) {
   max = Math.max(max, map.get(nums[i]));
   }
   return max
-};
+}
