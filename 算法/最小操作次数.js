@@ -1,5 +1,4 @@
 var minMoves2 = function(nums) {
-  let sum = 0
   let ans = 0
   nums.sort((a,b) => a - b)
   
