@@ -101,6 +101,12 @@ color: #4F4F4F;
   background: #c7c4c4;
 }
 
+.line-color{
+  height: 100%;
+  width: 120px;
+  background: red;
+}
+
 .left{
   float: left;
   margin-left: 65px;
