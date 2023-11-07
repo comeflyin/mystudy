@@ -19,3 +19,16 @@ var findTheDifference = function(s, t) {
 };
 
 
+
+var findTheDifference = function(s, t) {
+
+  for(let i = 0;i < t.length;i ++){
+      if(s.indexOf(t[i]) !== -1){
+          s = s.replace(t[i],'')
+      }else{
+          return t[i]
+      }
+  }
+
+};
+
