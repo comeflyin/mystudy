@@ -20,3 +20,16 @@ var canConstruct = function(ransomNote, magazine) {
 
   return true
 };
+
+
+var canConstruct = function(ransomNote, magazine) {
+  if(magazine.length < ransomNote.length) return false
+
+  for(let i = 0 ;i < ransomNote.length; i ++){
+      if(magazine.indexOf(ransomNote[i]) !== -1){
+          magazine = magazine.replace(ransomNote[i], '');
+      }else return false
+  }
+
+  return true
+};
