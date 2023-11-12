@@ -1,5 +1,3 @@
-function calculateTax(amount, rate = 0.2 * amount) {
-  return amount * rate;
-}
+let a = 10
 
-console.log(calculateTax(1000)); // 输出 200
+console.log(!1); // 输出 1
