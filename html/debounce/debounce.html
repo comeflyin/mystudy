@@ -30,6 +30,7 @@
       }
 
       btn.addEventListener('click',debounce(send,1000))  
+      
       function debounce(fn,delay){
         let timer
         
@@ -38,6 +39,7 @@
           let args = arguments
           
           if(timer) clearTimeout(timer)
+
           timer = setTimeout(() => {
             fn.call(this,...args)
           },delay)
