@@ -1,0 +1,16 @@
+<view class='hero'>
+YYY
+<button bindtap="doLogin">
+按钮
+</button>
+ <view class="car">
+  <view class="hd">
+  <text>{{info.name}}</text>
+  </view>
+  <view class="bd">
+  <text>{{info.model}}</text>
+  <text>{{info.price}}</text>
+  <image src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png" mode=""/>
+  </view>
+ </view>
+</view>
