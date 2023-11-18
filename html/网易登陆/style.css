@@ -1,0 +1,99 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.head{
+  display: flex;
+  position: relative;
+  height: 50px;
+  align-items: center;
+}
+
+.head .back{
+  /* border: 1px solid #000; */
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.back .icon-icon-06{
+  font-size: 30px;
+  color: rgb(61, 61, 61);
+}
+
+.head .title{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title .icon-a-Property1wangyiyunyinle{
+  color: rgb(250, 10, 10);
+}
+
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.body input{
+  width: 250px;
+  height: 50px;
+  margin: 6px;
+  border-radius: 15px;
+  background: #e0e3e7;
+  border: none;
+ /* color: rgb(143, 141, 139); */
+  font-size: 15px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.body button{
+  width: 250px;
+  height: 50px;
+  margin: 15px;
+  border-radius: 30px;
+  background: rgb(233, 105, 105);
+  border: none;
+  color: #fff;
+  font-size: 15px;
+}
+
+.body a{
+  color: rgb(6, 78, 211);
+  font-size: 15px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.success{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background: rgb(71, 63, 63);
+  border-radius: 20px;
+  color: #fdfdfd;
+}
+
+.success{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.success .iconfont{
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  margin: 8px;
+}
