@@ -6,7 +6,7 @@ var validPalindrome = function (s) {
       i++
       j--
   }
-
+  if (i >= j) return true;
   if (isPalindrome(i + 1, j)) return true
   if (isPalindrome(i, j - 1)) return true
 
