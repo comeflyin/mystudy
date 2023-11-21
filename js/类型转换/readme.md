@@ -27,3 +27,11 @@ ToPrimitive(obj, String)
 4. 否则，报错
 
 # 对象转布尔就是true
+
+
+# 一元运算符 + 
+
+# 二元运算符 +
+lprim + rprim == Toprimitive(v1) + Toprimitive(v2)
+1. 当 + 两边有一个是字符串，则按字符串进行拼接
+2. 否则， 转到 number 进行计算
