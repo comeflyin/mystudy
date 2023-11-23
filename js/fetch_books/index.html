@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./common.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+      <!-- 语义化标签 SEO 网络爬虫-->
+  <table  class="table table-striped">
+    <caption>文章表</caption>
+    <!-- 表头 -->
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>标题</th>
+        <th>作者</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <form name="postForm">
+    <div class="form-group">
+      <label for="titleInput">标题</label>
+      <input type="text" class="form-control" id="titleInput" name="titleInput" placeholder="请输入标题">
+    </div>
+    <div class="form-group">
+      <label for="authorInput">标题</label>
+      <input type="text" class="form-control" id="authorInput" name="authorInput" placeholder="请输入标题">
+    </div>
+    <button class="btn btn-default btn-primary" type="submit">添加</button>
+  </form>
+</div>
+
+<script>  
+  fetch(' http://localhost:3000/post')
+  .then(res => res.json())
+  .then(data => {
+    document.querySelector('.table tbody').innerHTML = 
+      data
+        .map(post => `
+          <tr>
+            <td>${post.id}</td>
+            <td>${post.title}</td>
+            <td>${post.author}</td> 
+          </tr>
+        `)
+        .join('')
+    
+  })
+  const oForm = document.forms['postForm']
+  oForm.addEventListener('submit',e => {
+    event.preventDefault() // 阻止默认事件  
+    const newPost = {
+      "title": oForm.querySelector('#titleInput').value,
+      "author": oForm.querySelector('#authorInput').value
+    }
+    fetch('http://localhost:3000/post',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPost)
+    }).then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+
+  })
+
+</script> 
+</body>
+</html>

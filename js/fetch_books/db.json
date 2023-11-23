@@ -1,0 +1,36 @@
+{
+  "post": [
+    {
+      "id": 1,
+      "title": "JaveScript You don't know",
+      "author": "况君豪"
+    },
+    {
+      "id": 2,
+      "title": "JavaScript高级程序设计",
+      "author": "进哥哥"
+    },
+    {
+      "title": "设计模式",
+      "author": "江总",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "学习了",
+      "postId": 2
+    },
+    {
+      "body": "好书",
+      "postId": "1",
+      "id": 3
+    }
+  ]
+}
