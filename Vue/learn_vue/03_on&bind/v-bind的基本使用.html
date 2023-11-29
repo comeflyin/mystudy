@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img{
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <template id="my-app">
+    <!-- <h2 v-text="msg"></h2> -->
+
+    <img v-bind:src="imgUrl" alt=""> <!-- v-bind：写在链接前-->
+    <a :href="link">bing</a> <!-- :语法糖 等于v-vbind -->
+
+  </template>  
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const App = {
+      template:'#my-app',
+      data(){
+        return {
+          msg:'hello world',
+          imgUrl:'https://pic1.zhimg.com/v2-d2aba0f0e32c3462d74bd1c801a81e79_r.jpg?source=1940ef5c',
+          link:'https://www.bing.com/'
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app')
+
+  </script>
+
+
+</body>
+</html>
