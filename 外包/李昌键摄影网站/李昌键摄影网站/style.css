@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.ImgContainer{
+    width: 600vw;
+    height:100vh;
+    display: flex;
+    overflow: hidden;
+}
+.ImgContainer img{
+    width: 100vw;
+    height: auto; 
+    object-fit: cover; 
+}
+#pre-btn{
+    position: absolute;
+    top: 40%;
+    left: 2%;
+    font-size: 50px;
+    color: white;
+    opacity: 70%;
+    cursor: pointer;
+    z-index: 10;
+}
+#next-btn{
+    position: absolute;
+    top: 40%;
+    right: 2%;
+    font-size: 50px;
+    color: white;
+    opacity: 70%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* 导航圆点 */
+.banner-control {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+}
+
+.banner-control ul{
+    display: flex;
+    list-style: none;
+}
+
+.banner-control ul li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.foot{
+    height: 100px;
+    width: 100px;
+    border: 10px solid black;
+}
+
