@@ -9,4 +9,4 @@
 // console.log([] + {}); // [object Object]
 
 // console.log({} + {}); // [object Object][object Object] 浏览器里直接写 {} + {} 会得到NaN
-
+console.log(+[] + {}); // [object Object]
