@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .page {
+      background: #0a141e;
+      width: 1500px;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%,0);
+    }
+    .head{
+      width: 1500px;
+      height: auto;
+      position: relative;
+    }
+    .head img{
+      width: 100%;
+      height: auto;
+    }
+    .head .headtop{
+      width: 100%;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid #9a9a9a;
+    }
+
+    .head .headtop ul{
+      display: flex;
+      list-style: none;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .head .headtop ul li{
+      flex: 1;
+      width: 100px;
+      height: 20px;
+    }
+
+    .head .text{
+      width: 1000px;
+      height: 150px;
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .head .text2{
+      display: flex;
+      flex-direction:column;
+      color:rgb(236, 108, 48);
+      font-size: 20px;
+      margin-left: 5px;
+      padding-left: 5px;
+      border-left: 1px solid rgb(236, 108, 48);
+    }
+
+    .head .text h1{
+      font-size: 70px;
+      color: white;
+      text-align: center;
+    }
+
+    .head .text h2{
+      font-size: 40px;
+      color: rgb(236, 108, 48);
+      text-align: center;
+    }
+
+    .body1{
+      width: 1500px;
+      height: 45rem;
+      position: relative;
+    }
+
+    .body1 .title{
+      width: 600px;
+      height: 80px;
+      border-radius: 35px;
+      border: 1px solid white;
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      transform: translate(-50%,0);
+      color: #fff;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .foot{
+      /* position: absolute; */
+      /* bottom: 0; */
+    }
+    .foot img{
+      width: 1500px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="head">
+      <img src="./head.png" alt="">
+      <div class="headtop">
+        <ul>
+          <li>首页</li>
+          <li>云虚机</li>
+          <li>高防I型云</li>
+          <li>高防II型云</li>
+          <li>0元托管</li>
+        </ul>
+      </div>
+      <div class="text">
+        <h1>不一样的双线高防云  ！</h1>
+        <h2>xxx网络特价邀约中，邀您体验</h2> 
+        <div class="text2">
+          <span>安徽·合肥</span>
+          <span>2016.7.26</span>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="body1">
+      <div class="title">
+        <img src="./ico.png" alt="">
+        双线超高配云虚机
+      </div>
+      <div class="content">
+        <div class="msg msg-l">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="msg msg-r"></div>
+      </div>
+    </div>
+
+    <div class="body2"></div>
+
+    <div class="foot">
+      <img src="./foot.png" alt="">
+    </div>
+  </div>
+</body>
+</html>
