@@ -38,7 +38,7 @@
   bottom: 0;
   background: @color-background-s;
   color: @color-white;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /*滤镜函数，它会对元素背后的部分应用模糊效果。10px 是模糊的半径，值越大，模糊效果越明显。*/
 
   &.fade-enter-from,
   &.fade-leave-to {
