@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.page{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.head{
+  width: 100%;
+  padding: 20px;
+  height: auto;
+}
+
+.head a{
+  text-decoration: none;
+  color: #009af5;
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.plays{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mustplay{
+  margin-left: 150px;
+  padding: 5px;
+  border-bottom: 4px solid #ffb80f;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play{
+  display:inline-block;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ccc;
+}
+
+
+.youji{
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.youji .title{
+  margin: 20px;
+  color: #1badb6;
+  font-size: 25px;
+}
+
+.youji .title span{
+  font-size: 14px;
+  margin-left: 5px;
+  color: #aaaaaa;
+}
+
+.youji .notes{
+  width:80%;
+  height: 200px;
+  margin: 10px;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.youji .notes img{
+  width: 450px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.youji .notes .note-title{
+  width: 100%;
+  margin-left: 30px;
+  font-size: 20px;
+  color: #000000;
+  display: block;
+}
+
+.youji .notes .note-text{
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 15px;
+  color: #747474;
+  display: block;
+}
+
+.youji .toutiao{
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.youji .toutiao img{
+  width: 100px;
+  height: auto;
+}

@@ -1,0 +1,109 @@
+
+.img{
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.img  img{
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.search{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search span{
+  font-weight: 700;
+  font-size: 35px;
+  margin-right: 40px;
+  color:#2577e3 ;
+}
+
+.search .searchInput{
+  height: 50px;
+  width: 50%;
+  border-radius: 10px;
+  border: 1px solid #2577e3;
+  display: flex;
+  overflow: hidden;
+}
+
+.search input{
+  width: 85%;
+  height: 100%;
+  border:none;
+}
+
+.search button{
+  flex: 1;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background: #009af5;
+}
+
+.plays{
+  margin-bottom: 20px;
+}
+
+.mustplay{
+  padding: 5px;
+  border-bottom: 4px solid transparent; 
+  background-image: linear-gradient(to right, rgb(139, 201, 243), blue); /* 渐变背景 */
+  background-repeat: no-repeat; /* 只显示一次，这样只有类似下划线 */
+  background-size: 100% 4px; /*  表示背景图像的宽度是元素的宽度，高度是 4px */ 
+  background-position: 0 100%; /*  表示背景图像的位置在元素的左下角 */ 
+  border-radius: 10px; 
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.play{
+  display:inline-block;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 ;
+}
+
+.msg{
+  width: 100%;
+  height: 100px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.msg .title{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.dianping{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dianping .point{
+  color: #5678a8;
+  font-weight: 600;
+}
+
+.dianping .time{
+  color: #666666;
+}
+
+.msg .jieshao{
+  color: #666666;
+}
