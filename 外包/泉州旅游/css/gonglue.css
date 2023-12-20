@@ -6,6 +6,7 @@
 .page{
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -24,12 +25,12 @@
 }
 
 .plays{
-  width: 100%;
+  width: 80%;
   margin-bottom: 20px;
 }
 
 .mustplay{
-  margin-left: 150px;
+  margin-left: 15px;
   padding: 5px;
   border-bottom: 4px solid #ffb80f;
   font-size: 20px;
@@ -43,6 +44,7 @@
 }
 
 .play{
+
   display:inline-block;
   border-radius: 10px;
   margin: 10px;
@@ -51,6 +53,37 @@
   cursor: pointer;
   box-shadow: 0 0 10px #ccc;
 }
+
+.msg{
+  width: 100%;
+  height: 100px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.msg .title{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.dianping{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dianping .point{
+  color: #5678a8;
+  font-weight: 600;
+}
+
+.dianping .time{
+  color: #666666;
+}
+
+.msg .jieshao{
+  color: #666666;
+}
+
 
 
 .youji{
