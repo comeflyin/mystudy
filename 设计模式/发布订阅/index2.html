@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+
+  <script>
+    let ev = new Event('look', { bubbles: true, cancelable: false,composed: false })
+
+    let box = document.getElementById('box')
+    let boxShadow = box.attachShadow({ mode: 'open', delegatesFocus: true })
+    boxShadow.innerHTML = `
+      <style>
+        :host {
+          color: green;
+        }
+      </style>
+      <div id="box">我是阴影</div>
+    `
+    box.addEventListener('look', (e) => {
+     if(e.cancelable){
+      e.preventDefault()
+     }else{
+      console.log('look');
+     }
+    })
+
+    box.dispatchEvent(ev) // 在box上发布look事件
+  </script>
+</body>
+</html>

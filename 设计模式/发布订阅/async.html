@@ -1,0 +1,21 @@
+<script>
+  let finish = new CustomEvent('finish', { detail: { name: 'ok' }})
+
+
+  function fnA(){
+    setTimeout(() => {
+      console.log('请求a');
+      window.dispatchEvent(finish)
+    }, 1000);
+  }
+  function fnB(){
+    setTimeout(() => {
+      console.log('请求b');
+    }, 500);
+  }
+
+  fnA()
+  window.addEventListener('finish', (e) => {
+    fnB()
+  })
+</script>
