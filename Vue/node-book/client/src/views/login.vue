@@ -41,6 +41,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { reactive } from "vue";
+import axios from '../api';
 
 const router = useRouter()
 const state = reactive({
@@ -48,8 +49,20 @@ const state = reactive({
   password: "",
 });
 
-const onSubmit = () => {
+const onSubmit = async () => {
+  // 发请求，将用户名和密码传给后端
   console.log(state.username, state.password);
+  const res = await axios.post('/login', {
+    username: state.username,
+    password: state.password
+  }) 
+  
+  // 保存用户信息
+
+    sessionStorage.setItem('user', JSON.stringify(res.data))
+    router.push('/noteClass')
+  
+  
 };
 
 const register = () => {
