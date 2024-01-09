@@ -7,35 +7,46 @@
   width: 100vw;
   height: 100vh;
   position: relative;
+  /* 隐藏超出部分防止撑大容器 */
   overflow: hidden;
 }
 
 .peoPhoto .box{
-  width: 1200px;
+  /* 总宽度 */
+  width: 1500px;
   height: 100vh;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-600px,-50%);
+  /* 自身居中 -37.5vw参考js  */
+  transform: translate(-37.5vw,-50%);
+  /* 内容居中 */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 设为3D */
   transform-style: preserve-3d;
+  /* 动画延时 所有可过渡类型 0.25s 恒定速度  */
   transition: all 0.25s linear;
-  perspective: 800px; /*透视 增加视线与z平面的距离*/
-  
+  /*透视 增加视线与z平面的距离*/
+  perspective: 800px; 
 }
 
 .box div{
-
-  width: 200px;
   height: 300px;
   background: #000;
   border: 1px solid #fff;
   background: rgba(0,0,0,0.5);
   transition: all 0.25s linear;
+  /* 鼠标悬停样式 */
   cursor: pointer;
-  background-size: cover;
-  border-radius: 5px;
-  
+  border-radius: 4px;
+  overflow: hidden;
+  /* 阴影 无偏移 10px扩散 */
+  box-shadow: 0 0 10px #9c9c9c;
+}
+
+.box div img{
+  width: 100%;
+  height: 100%;
 }
