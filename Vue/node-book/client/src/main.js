@@ -6,7 +6,7 @@ import { Button } from 'vant';
 // 2. 引入组件样式
 import 'vant/lib/index.css';
 import router from './router'
-import { Form, Field, CellGroup, Icon } from 'vant';
+import { Form, Field, CellGroup, Icon, Uploader, ActionSheet  } from 'vant';
 
 const app = createApp(App)
 
@@ -16,5 +16,7 @@ app
   .use(CellGroup)
   .use(Button)
   .use(Icon)
+  .use(Uploader)
+  .use(ActionSheet)
   .use(router)
   .mount('#app')

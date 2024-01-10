@@ -6,7 +6,7 @@
           <van-icon name="wap-nav" />
         </div>
         <div>
-          <van-icon name="edit" />
+          <van-icon name="edit" @click="goPublish" />
           <van-icon name="like-o" />
           <van-icon name="search" />
         </div>
@@ -47,7 +47,7 @@ const noteClassList = [
   { bgColor: "#f0aa84", title: "美食" },
   { bgColor: "#dcf189", title: "旅行" },
   { bgColor: "#e0c2f1", title: "恋爱" },
-  { bgColor: "#c2ebf1", title: "美食" },
+  { bgColor: "#c2ebf1", title: "学习" },
   { bgColor: "#949c9d", title: "吵架" },
 ];
 
@@ -58,6 +58,11 @@ const hideMenu = (e) => {
 const goNoteList = (title) => {
   router.push({ path: "/noteList", query: { 'title': title } });
 };
+
+const goPublish = () => {
+  router.push({ path: "/notePublish" });
+};
+
 </script>
 
 <style lang="less" scoped>
