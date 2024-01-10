@@ -1,3 +1,4 @@
+// 创建mysql的配置文件
 const config = {
   database: {
     DATABASE: 'notebook',
