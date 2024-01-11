@@ -56,7 +56,7 @@ router.post('/publish', async (ctx) => {
   try{
     const result = await notePublish([note_content, title, head_img, note_type, nickname, userId, c_time, m_time])
     
-    console.log("已访问到publish接口");
+    console.log("notePublish");
     if(result.affectedRows !== 0){
       ctx.body = {
         code: '8000',

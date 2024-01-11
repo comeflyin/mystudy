@@ -37,6 +37,7 @@ import { onMounted, reactive, ref } from 'vue'
 import { usePermissStore } from '../store/permiss'
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router';
+import type { FormInstance } from 'element-plus';
 
 const permiss = usePermissStore()
 const router = useRouter()
@@ -68,7 +69,7 @@ const rules = {
   ]
 }
 // submit event elementplus formEl
-const submitForm = (formEl) => {
+const submitForm = (formEl :FormInstance | undefined) => {
   console.log(formEl);
   
   if(!formEl) return
