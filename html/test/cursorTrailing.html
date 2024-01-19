@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .test{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas></canvas>
+  <div class="test">
+    test
+  </div>
+  <script>
+    // 获取 canvas 元素和 2D 渲染上下文
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext('2d');
+
+// 用于记录鼠标是否移动的状态
+let mouseMoved = false;
+
+// 鼠标指针的初始位置
+const pointer = {
+  x: .5 * window.innerWidth,
+  y: .5 * window.innerHeight,
+}
+
+// 模拟点的数量以及相关参数
+const params = {
+  pointsNumber: 40,       // 点的数量
+  widthFactor: .3,        // 线宽度因子
+  mouseThreshold: .6,     // 鼠标移动的阈值
+  spring: .4,             // 弹簧系数
+  friction: .5            // 摩擦系数
+};
+
+// 用于存储点的数组
+const trail = new Array(params.pointsNumber);
+
+// 初始化点的位置
+for (let i = 0; i < params.pointsNumber; i++) {
+  trail[i] = {
+    x: pointer.x,
+    y: pointer.y,
+    dx: 0,
+    dy: 0,
+  }
+}
+
+// 鼠标点击事件
+window.addEventListener("click", e => {
+  updateMousePosition(e.pageX, e.pageY);
+});
+
+// 鼠标移动事件
+window.addEventListener("mousemove", e => {
+  mouseMoved = true;
+  updateMousePosition(e.pageX, e.pageY);
+});
+
+// 触摸移动事件
+window.addEventListener("touchmove", e => {
+  mouseMoved = true;
+  updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+});
+
+// 更新鼠标指针的位置
+function updateMousePosition(eX, eY) {
+  pointer.x = eX;
+  pointer.y = eY;
+}
+
+// 设置 canvas 并开始更新
+setupCanvas();
+update(0);
+
+// 窗口调整事件
+window.addEventListener("resize", setupCanvas);
+
+// 更新函数，用于绘制效果
+function update(t) {
+  // 用于初始动画效果
+  if (!mouseMoved) {
+    pointer.x = (.5 + .3 * Math.cos(.002 * t) * (Math.sin(.005 * t))) * window.innerWidth;
+    pointer.y = (.5 + .2 * (Math.cos(.005 * t)) + .1 * Math.cos(.01 * t)) * window.innerHeight;
+  }
+
+  // 清除画布
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // 更新点的位置
+  trail.forEach((p, pIdx) => {
+    const prev = pIdx === 0 ? pointer : trail[pIdx - 1];
+    const spring = pIdx === 0 ? .4 * params.spring : params.spring;
+    p.dx += (prev.x - p.x) * spring;
+    p.dy += (prev.y - p.y) * spring;
+    p.dx *= params.friction;
+    p.dy *= params.friction;
+    p.x += p.dx;
+    p.y += p.dy;
+  });
+
+  // 绘制曲线
+  ctx.lineCap = "round";
+  ctx.beginPath();
+  ctx.moveTo(trail[0].x, trail[0].y);
+
+  for (let i = 1; i < trail.length - 1; i++) {
+    const xc = .5 * (trail[i].x + trail[i + 1].x);
+    const yc = .5 * (trail[i].y + trail[i + 1].y);
+    ctx.quadraticCurveTo(trail[i].x, trail[i].y, xc, yc);
+    ctx.lineWidth = params.widthFactor * (params.pointsNumber - i);
+    ctx.stroke();
+  }
+  ctx.lineTo(trail[trail.length - 1].x, trail[trail.length - 1].y);
+  ctx.stroke();
+
+  // 请求下一帧动画
+  window.requestAnimationFrame(update);
+}
+
+// 设置 canvas 大小
+function setupCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+  </script>
+</body>
+
+
+</html>
