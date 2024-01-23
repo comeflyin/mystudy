@@ -41,3 +41,10 @@ Process.nextTick()
 3. 执行微任务
 4. 如果有需要，会渲染页面
 5. 执行宏任务(这也叫下一轮的 event loop 的开启)
+props
+emit
+v-model
+refs
+provide/inject
+eventBus
+vuex/pinia(状态管理⼯具)

@@ -35,12 +35,14 @@
         let timer
         
         return  function(){
-          // arguments
+          // arguments 参数组 伪数组
           let args = arguments
           
+          // 通过闭包保存timer timer是上一次定时器 如果存在就清除
           if(timer) clearTimeout(timer)
 
           timer = setTimeout(() => {
+            // 通过call改变this指向
             fn.call(this,...args)
           },delay)
         }
