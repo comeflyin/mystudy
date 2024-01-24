@@ -88,44 +88,100 @@
 
 // console.log(getInterval(a,b))
 
-function findMinCombination(nums, n) {
-  // Step 1: 对数组 nums 进行排序
-  nums.sort((a, b) => a - b);
+// function findMinCombination(nums, n) {
+//   // Step 1: 对数组 nums 进行排序
+//   nums.sort((a, b) => a - b);
 
-  // Step 2: 初始化计数器和结果变量
-  let count = 0;
-  let result = null;
+//   // Step 2: 初始化计数器和结果变量
+//   let count = 0;
+//   let result = null;
 
-  // Step 3: 遍历数组 nums
-  for (let i = 0; i < nums.length; i++) {
-      // 对于每个元素 nums[i]
-      // 计算以当前元素为最小值的排列组合数
-      const combinations = getCombinations(nums.length - i - 1, count);
+//   // Step 3: 遍历数组 nums
+//   for (let i = 0; i < nums.length; i++) {
+//       // 对于每个元素 nums[i]
+//       // 计算以当前元素为最小值的排列组合数
+//       const combinations = getCombinations(nums.length - i - 1, count);
 
-      // 如果当前元素满足条件，更新结果并增加计数器
-      if (count + combinations >= n) {
-          result = nums[i];
-          count++;
-      } else {
-          // 如果不满足条件，增加计数器
-          count += combinations;
+//       // 如果当前元素满足条件，更新结果并增加计数器
+//       if (count + combinations >= n) {
+//           result = nums[i];
+//           count++;
+//       } else {
+//           // 如果不满足条件，增加计数器
+//           count += combinations;
+//       }
+//   }
+
+//   return result;
+// }
+
+// // 辅助函数：计算组合数
+// function getCombinations(n, r) {
+//   if (r === 0 || r === n) {
+//       return 1;
+//   } else {
+//       return getCombinations(n - 1, r - 1) + getCombinations(n - 1, r);
+//   }
+// }
+
+// // 示例
+// const nums = [1, 2];
+// const n = 22;
+// const result = findMinCombination(nums, n);
+// console.log(result);
+
+function isPrime(num) {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+
+function getPrime() {
+  let currentNumber = 2; // 起始数字
+
+  return function () {
+    while (true) {
+      if (isPrime(currentNumber)) {
+        const prime = currentNumber;
+        currentNumber++;
+        return prime;
       }
-  }
-
-  return result;
+      currentNumber++;
+    }
+  };
 }
 
-// 辅助函数：计算组合数
-function getCombinations(n, r) {
-  if (r === 0 || r === n) {
-      return 1;
-  } else {
-      return getCombinations(n - 1, r - 1) + getCombinations(n - 1, r);
+// 使用示例
+const getNextPrime = getPrime();
+console.log(getNextPrime()); // 输出：2
+console.log(getNextPrime()); // 输出：3
+console.log(getNextPrime()); // 输出：5
+
+
+function sum(...args) {
+  // 初始总和值
+  let currentSum = args.reduce((acc, val) => acc + val, 0);
+
+  // 定义 sumof 函数
+  function sumof(...nextArgs) {
+    // 将当前总和值与新传入的参数相加
+    currentSum += nextArgs.reduce((acc, val) => acc + val, 0);
+    // 返回 sumof，以支持链式调用
+    return sumof;
   }
+
+  // 添加 sumof 方法，用于获取最终总和值
+  sumof.sumof = function () {
+    return currentSum;
+  };
+
+  // 返回 sumof 函数，以支持初始调用 sum(1, 2)
+  return sumof;
 }
 
-// 示例
-const nums = [1, 2];
-const n = 22;
-const result = findMinCombination(nums, n);
-console.log(result);
+// 示例使用
+const result = sum(1, 2)(3).sumof();
+console.log(result); // 输出：6
