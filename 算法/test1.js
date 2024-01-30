@@ -23,25 +23,25 @@
 // nb.sayHello()
 // nb.sayBye()
 
-function longestStr(str){
-  let sum = 0
-  let l = 0
-  let len = str.length
+// function longestStr(str){
+//   let sum = 0
+//   let l = 0
+//   let len = str.length
 
-  let map = new Map()
+//   let map = new Map()
 
-  for(let r = 0;r < len;r ++){
-    const temp = str[r]
-    if(map.has(temp) && map.get(temp) >= l){
-      l = map.get(temp) + 1
-    }
-    map.set(temp,r)
-    const nowLong = r - l + 1
-    sum = Math.max(sum,nowLong)
-  }
+//   for(let r = 0;r < len;r ++){
+//     const temp = str[r]
+//     if(map.has(temp) && map.get(temp) >= l){
+//       l = map.get(temp) + 1
+//     }
+//     map.set(temp,r)
+//     const nowLong = r - l + 1
+//     sum = Math.max(sum,nowLong)
+//   }
 
-  return sum
-}
+//   return sum
+// }
 
-const s = 'asdfgsdfghhjjkldace'
-console.log(longestStr(s));
+// const s = 'asdfgsdfghhjjkldace'
+// console.log(longestStr(s));
